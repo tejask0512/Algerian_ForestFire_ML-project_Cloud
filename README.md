@@ -101,13 +101,13 @@ Key steps in the modeling process:
 - Include more detailed geographical information
 - Add real-time weather data integration
 
-## License
-
-[Include your license information here]
 
 ## Contact
 
-[Your contact information]
+👨‍💻 Author
+Tejas Kamble
+🌐 tejaskamble.com
+🔗 GitHub
 
 ## Acknowledgements
 
