@@ -11,9 +11,9 @@ import config
 app=Flask(__name__)
 
 models_path=config.models_path
-ridge_model=pickle.load(open(f'{models_path}/ridge.pkl','rb'))
-scaler_model=pickle.load(open(f'{models_path}/scaler.pkl','rb'))
-linear_model=pickle.load(open(f'{models_path}/linear.pkl','rb'))
+ridge_model=pickle.load(open('models/ridge.pkl','rb'))
+scaler_model=pickle.load(open('models/scaler.pkl','rb'))
+linear_model=pickle.load(open('models/linear.pkl','rb'))
 
 
 
