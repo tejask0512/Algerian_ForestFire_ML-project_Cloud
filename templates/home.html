@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Prediction WebApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Algerian Forest Fire Prediction</h2>
+        
+        <form id="prediction-form" method="POST" action="{{ url_for('predict_datapoint')}}">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="Temperature" class="form-label">Temperature:</label>
+                    <input type="number" step="any" id="Temperature" name="Temperature" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="RH" class="form-label">Relative Humidity:</label>
+                    <input type="number" step="any" id="RH" name="RH" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="Ws" class="form-label">Wind Speed:</label>
+                    <input type="number" step="any" id="Ws" name="Ws" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="Rain" class="form-label">Rain:</label>
+                    <input type="number" step="any" id="Rain" name="Rain" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="FFMC" class="form-label">FFMC:</label>
+                    <input type="number" step="any" id="FFMC" name="FFMC" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="DMC" class="form-label">DMC:</label>
+                    <input type="number" step="any" id="DMC" name="DMC" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="ISI" class="form-label">ISI:</label>
+                    <input type="number" step="any" id="ISI" name="ISI" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="Classes" class="form-label">Classes:</label>
+                    <input type="text" id="Classes" name="Classes" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <label for="Region" class="form-label">Region:</label>
+                    <input type="text" id="Region" name="Region" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+
+        <div class="mt-4 text-center">
+            <h3 class="alert alert-info d-inline-block" id="result-container" style="display: none;">
+                The FWI prediction is: <span id="prediction-result">{{ result }}</span>
+            </h3>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
